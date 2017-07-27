@@ -278,7 +278,7 @@ module.exports = {
     // require or disallow padding within blocks
     "padded-blocks": ["error", "never"],
     // require quotes around object literal property names
-    "quote-props": "error",
+    "quote-props": ["error", "consistent-as-needed"],
     // disallow unnecessary semicolon
     "semi": ["error", "never"],
     // enforce consistent spacing before and after semicolons
@@ -289,7 +289,11 @@ module.exports = {
     // enforce location of semicolons
     "semi-style": ["error", "last"],
     // enforce consistent spacing before function definition opening parenthesis
-    "space-before-function-paren": ["error", "always"],
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "never"
+    }],
     // enforce consistent spacing inside parentheses
     "space-in-parens": ["error", "never"],
     // require spacing around infix operators
