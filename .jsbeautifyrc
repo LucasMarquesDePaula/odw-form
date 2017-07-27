@@ -1,0 +1,8 @@
+{
+  "end_with_newline": true,
+  "indent_size": 2,
+  "indent_char": " ",
+  "space_in_paren": false,
+  "space_in_empty_paren": false,
+  "space_after_anon_function": true
+}
