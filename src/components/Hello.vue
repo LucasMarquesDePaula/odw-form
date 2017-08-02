@@ -42,22 +42,19 @@
 
 <script>
 export default {
-  "name": "hello",
-  "data" () {
+  name: "hello",
+  data() {
     return {
-      "teste": "novo model",
-      "msg": "Welcome to Your Vue.js App"
+      teste: "novo model",
+      msg: "Welcome to Your Vue.js App"
     }
   }
 }
-let x = tag`Olá`
+const x = tag`Olá`
 
-
-
-function tag (strings) {
-  let str1 = strings[0]
+function tag(strings) {
+  const str1 = strings[0]
 }
-
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

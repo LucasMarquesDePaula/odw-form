@@ -277,8 +277,6 @@ module.exports = {
     "operator-linebreak": ["error", "before"],
     // require or disallow padding within blocks
     "padded-blocks": ["error", "never"],
-    // enforce the consistent use of either backticks, double, or single quotes
-    "quotes": ["warn", "double"],
     // require quotes around object literal property names
     "quote-props": ["error", "consistent-as-needed"],
     // disallow unnecessary semicolon
