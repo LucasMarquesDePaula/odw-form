@@ -1,17 +1,17 @@
 <template>
   <div>
-    <label></label>
-    <div class="input-group">
-      <span class="input-group-addon">https://example.com/users/</span>
-      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-    </div>
+    <of-label></of-label>
+    <of-addon>
+      <div class="input-group" :class="classes.inputGroup">
+        <of-addon :html="addons.left"></of-addon>
+        <input type="text" class="form-control" />
+        <of-addon :html="addons.right"></of-addon>
+      </div>
   </div>
 </template>
 
 <script>
 import { Enum } from "enumify"
-// import field from "../field"
-// import fecha from "fecha"
 
 class State extends Enum { }
 
@@ -40,7 +40,7 @@ export default {
       default: ""
     },
     label: {
-      type: [String, Array]
+      type: [String, Object]
     }
   },
   /*
@@ -115,7 +115,7 @@ options: undefined
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .vue-form-generator .field-input .wrapper {
   width: 100%;
 }

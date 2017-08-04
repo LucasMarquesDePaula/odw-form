@@ -216,7 +216,7 @@ module.exports = {
     // enforce the consistent use of either function declarations or expressions
     "func-style": ["error", "declaration"],
     // enforce consistent indentation
-    "indent": ["error", 2],
+    "indent": ["warn", 2],
     // jsx-quotes
     "jsx-quotes": ["error", "prefer-double"],
     // enforce consistent spacing between keys and values in object literal properties
@@ -276,7 +276,7 @@ module.exports = {
     // enforce consistent linebreak style for operators
     "operator-linebreak": ["error", "before"],
     // require or disallow padding within blocks
-    "padded-blocks": ["error", "never"],
+    "padded-blocks": ["warn", "never"],
     // enforce the consistent use of either backticks, double, or single quotes
     "quotes": ["warn", "double"],
     // require quotes around object literal property names
@@ -291,7 +291,7 @@ module.exports = {
     // enforce location of semicolons
     "semi-style": ["error", "last"],
     // enforce consistent spacing before function definition opening parenthesis
-    "space-before-function-paren": ["error", {
+    "space-before-function-paren": ["warn", {
       "anonymous": "always",
       "named": "never",
       "asyncArrow": "never"

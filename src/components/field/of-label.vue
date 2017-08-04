@@ -1,28 +1,40 @@
  <template>
-    <label :style="style">
-        {{text}}
-    </label>
+  <label :style="style">
+    {{text | innerHTML}}
+  </label>
 </template>
 
 <script>
 import isFunction from "lodash/isFunction"
 export default {
+  name: "of-label",
   props: {
-    text: {
-      type: [String, Function],
-      default: ""
-    },
     align: {
       type: [String, Function],
       default: "left"
+    },
+    text: {
+      type: [String, Function]
     }
   },
   computed: {
-    style() {
-      const style = {}
-      style["text-align"] = isFunction(this.align) ? this.align(this) : this.align
-      return style
+    style () {
+      return {
+        "text-align": isFunction(this.align) ? this.align(this) : this.align
+      }
+    }
+  },
+  filters: {
+    innerHTML (text) {
+      let html = isFunction(text) ? text() : text
+      return html || " "
     }
   }
 }
 </script>
+
+<style>
+label {
+  display: block;
+}
+</style>
