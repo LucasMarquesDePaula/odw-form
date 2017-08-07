@@ -1,30 +1,15 @@
-import {
-  Enum
-} from "enumify"
-
-class State extends Enum {}
-
-State.initEnum({
-  INVALID: 0b00000001,
-  CHANGED: 0b00000010,
-  RESETED: 0b00000100,
-  DIRTY: 0b00001000,
-  LOCKED: 0b00010000
-})
+import State from "./state"
+import concat from "lodash/concat"
+import each from "lodash/each"
+import isArray from "lodash/isArray"
+import remove from "lodash/remove"
+import uniqueId from "lodash/uniqueId"
 
 export default {
   props: {
-    // addons: {
-    //   type: [Object],
-    //   default: {}
-    // },
     default: {
       type: [Boolean, Number, Object, String]
     },
-    // editable: {
-    //   type: [Boolean, Function],
-    //   default: false
-    // },
     hidden: {
       type: Boolean,
       default: false
@@ -47,15 +32,11 @@ export default {
         return Boolean(value)
       }
     },
-    // placeholder: {
-    //   type: String,
-    //   default: ""
-    // },
     type: {
       type: Function,
       default: String,
       validator: function (value) {
-        return [Boolean, Number, Object, String].indexOf(typeof value) !== -1
+        return [Boolean, Date, File, Number, Object, String].indexOf(typeof value) !== -1
       }
     }
   },
@@ -63,6 +44,7 @@ export default {
     state: State.RESETED
   },
   methods: {
+    // Value manipulation
     set(value, dirty = true) {
       if (dirty) {
         this.state = this.state | State.DIRTY
@@ -77,26 +59,55 @@ export default {
       this.state = this.state & ~State.DIRTY
       this.value = this.default
     },
-    focus() {
-      this.$el.getElementsByTagName(this.tagName)[0].focus()
-    },
+    // Display
     hide() {
       this.state = this.state | State.HIDDEN
     },
     show() {
       this.state = this.state & ~State.HIDDEN
     },
+    // Valid
     valid() {
       this.state = this.state | State.INVALID
     },
     invalid() {
       this.state = this.state & ~State.INVALID
     },
+    // Lock
     lock() {
       this.state = this.state | State.LOCKED
     },
     unlock() {
       this.state = this.state & ~State.LOCKED
+    },
+    // Messages
+    appendMessage(message) {
+      if (isArray(this.message)) {
+        this.messages = []
+      }
+
+      if (isArray(message)) {
+        each(message, (message) => {
+          message.id = `msg-${uniqueId()}`
+          concat(this.messages, message)
+        })
+      } else {
+        message.id = `msg-${uniqueId()}`
+        concat(this.messages, message)
+      }
+    },
+    removeMessage(message) {
+      if (isArray(message)) {
+        each(message, (message) => {
+          remove(this.message, (m) => {
+            return m.id === message.id
+          });
+        })
+      } else {
+        remove(this.messages, (m) => {
+          return m.id === message.id
+        });
+      }
     }
   }
 }

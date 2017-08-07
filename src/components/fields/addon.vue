@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import isComponent from "@/components/filters/isComponent"
 import isFunction from "lodash/isFunction"
 import isString from "lodash/isString"
 

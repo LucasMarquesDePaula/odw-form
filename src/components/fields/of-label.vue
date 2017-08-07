@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import isFunction from "lodash/isFunction"
 export default {
   name: "of-label",
   props: {
@@ -26,8 +25,7 @@ export default {
   },
   filters: {
     innerHTML (text) {
-      let html = isFunction(text) ? text() : text
-      return html || " "
+      return isFunction(text) ? text() : text
     }
   }
 }
