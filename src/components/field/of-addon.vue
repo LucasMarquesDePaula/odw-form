@@ -1,11 +1,7 @@
 <template>
     <span class="input-group-addon">
-        <div v-if="isComponent">
-            If: <component :is="html"></component>
-        </div>
-        <div v-else>
-            Else: {{html | innerHTML}}
-        </div>
+        <component v-if="isComponent" :is="html"></component>
+        <div v-else> {{html | innerHTML}} </div>
     </span>
 </template>
 
