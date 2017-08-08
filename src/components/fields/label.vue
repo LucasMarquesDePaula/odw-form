@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import isFunction from "lodash/isFunction"
+
 export default {
   name: "of-label",
   props: {
@@ -17,14 +19,14 @@ export default {
     }
   },
   computed: {
-    style () {
+    style() {
       return {
         "text-align": isFunction(this.align) ? this.align(this) : this.align
       }
     }
   },
   filters: {
-    innerHTML (text) {
+    innerHTML(text) {
       return isFunction(text) ? text() : text
     }
   }

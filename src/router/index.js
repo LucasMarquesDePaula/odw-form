@@ -1,4 +1,3 @@
-import Hello from "@/components/Hello"
 import Router from "vue-router"
 import Vue from "vue"
 
@@ -9,7 +8,17 @@ export default new Router({
     {
       path: "/",
       name: "Hello",
-      component: Hello
+      component: (resolve) => require(["@/pages/Hello.vue"], resolve)
+    },
+    {
+      path: "/fields/field",
+      name: "Field",
+      component: (resolve) => require(["@/pages/fields/field.vue"], resolve)
+    },
+    {
+      path: "/fields/input",
+      name: "Input",
+      component: (resolve) => require(["@/pages/fields/input.vue"], resolve)
     }
   ]
 })

@@ -27,12 +27,12 @@ export default {
   },
   mixins: [Field],
   methods: {
-    focus () {
+    focus() {
       this.$el.getElementsByTagName(this.tagName)[0].focus()
     }
-  }
+  },
   computed: {
-    inputClass () {
+    inputClass() {
       // TODO
       return {
         "has-success": false,

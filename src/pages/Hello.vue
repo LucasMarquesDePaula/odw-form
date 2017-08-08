@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import AddOn from "./field/of-addon.vue"
-import Label from "./field/of-label.vue"
+import AddOn from "@/components/fields/addOn.vue"
+import Label from "@/components/fields/label.vue"
 
 export default {
   name: "hello",
@@ -20,23 +20,22 @@ export default {
     "of-label": Label,
     "of-addon": AddOn
   },
-  data () {
+  data() {
     return {
       msg: "Welcome to Your Vue.js App",
       min: 12
     }
   },
   methods: {
-    text () {
+    text() {
       return () => `${this.msg} (passed by function)`
     },
-    html () {
+    html() {
       return () => this.child
       // `<h1>${this.msg} (passed by function) </h1>`
     },
-    child () {
-      let msg = this.msg
-      let min = this.min
+    child() {
+      const { min, msg } = this
       return {
         template: `<span>Digite mais ${min - msg.length} caracteres</span>`
       }
