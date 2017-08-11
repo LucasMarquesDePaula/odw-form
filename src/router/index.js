@@ -8,17 +8,22 @@ export default new Router({
     {
       path: "/",
       name: "Hello",
-      component: (resolve) => require(["@/pages/Hello.vue"], resolve)
+      component: (resolve) => require(["@/pages/Hello"], resolve)
     },
     {
-      path: "/fields/field",
+      path: "/field",
       name: "Field",
-      component: (resolve) => require(["@/pages/fields/field.vue"], resolve)
+      component: (resolve) => require(["@/pages/fields/field"], resolve)
     },
     {
       path: "/fields/input",
       name: "Input",
-      component: (resolve) => require(["@/pages/fields/input.vue"], resolve)
+      component: (resolve) => require(["@/pages/fields/input/input"], resolve)
+    },
+    {
+      path: "/fields/datetime-picker",
+      name: "DateTime Picker",
+      component: (resolve) => require(["@/pages/fields/input/datetimePicker"], resolve)
     }
   ]
 })

@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import AddOn from "@/components/fields/addOn.vue"
-import Label from "@/components/fields/label.vue"
+import AddOn from "@/components/fields/input/AddOn"
+import Label from "@/components/Label"
 
 export default {
   name: "hello",

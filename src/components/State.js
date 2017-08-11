@@ -12,17 +12,13 @@ State.initEnum({
   CHANGED: 1 << ++idx,
   DIRTY: 1 << ++idx,
   RESETED: 1 << ++idx,
-  LOCKED: 1 << ++idx,
-  set(state, value) {
-    return state | value
-  },
-  unset(state, value) {
-    return state & ~value
-  },
-  test(state, value) {
-    return Boolean(state & value)
-  }
+  LOCKED: 1 << ++idx
 })
 
+State.set = (state, value) => state | value
+
+State.unset = (state, value) => state & ~value
+
+State.test = (state, value) => Boolean(state & value)
 
 export default State

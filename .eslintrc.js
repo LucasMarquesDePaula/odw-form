@@ -262,7 +262,7 @@ module.exports = {
     // disallow all tabs
     "no-tabs": "error",
     // disallow trailing whitespace at the end of lines    	
-    "no-trailing-spaces": "error",
+    // "no-trailing-spaces": "none",
     // disallow dangling underscores in identifiers
     "no-underscore-dangle": "error",
     //disallow ternary operators when simpler alternatives exist
