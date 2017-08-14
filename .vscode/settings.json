@@ -1,3 +1,8 @@
-// Place your settings in this file to overwrite default and user settings.
 {
+    "workbench.iconTheme": null,
+    "vetur.format.js.InsertSpaceBeforeFunctionParenthesis": false,
+    "git.enableSmartCommit": true,
+    "files.eol": "\n",
+    "editor.tabSize": 2,
+    "window.zoomLevel": 0
 }
