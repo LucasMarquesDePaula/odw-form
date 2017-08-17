@@ -272,7 +272,7 @@ module.exports = {
     // enforce the location of single-line statements
     "nonblock-statement-body-position": ["error", "beside"],
     // enforce consistent spacing inside braces
-    "object-curly-spacing": ["error", "always"],
+    "object-curly-spacing": ["warn", "always"],
     // enforce consistent linebreak style for operators
     "operator-linebreak": ["error", "before"],
     // require or disallow padding within blocks

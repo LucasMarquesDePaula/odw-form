@@ -11,6 +11,11 @@
       </a>
       <ul aria-expanded="true">
         <li>
+          <a href="#/fields/autocomplete">
+            Autocomplete
+          </a>
+        </li>
+        <li>
           <a href="#/fields/field">
             Field
           </a>

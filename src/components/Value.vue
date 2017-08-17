@@ -6,7 +6,14 @@ export default {
       type: types
     },
     value: {
-      type: types
+      type: types.concat(Array)
+    },
+    type: {
+      type: Function,
+      default: Object,
+      validation(type) {
+        return types.indexOf(type) !== -1
+      }
     }
   },
   data() {

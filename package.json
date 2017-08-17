@@ -21,6 +21,7 @@
     "fs": "0.0.1-security",
     "jquery": "^3.2.1",
     "metismenu": "^2.7.0",
+    "select2":"^4.0.3",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0"
   },

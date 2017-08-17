@@ -15,6 +15,11 @@ export default new Router({
       name: "Field",
       component: (resolve) => require(["@/pages/fields/field"], resolve)
     },
+    // {
+    //   path: "/fields/autocomplete",
+    //   name: "Autocomplete",
+    //   component: (resolve) => require(["@/pages/fields/input/autocomplete"], resolve)
+    // },
     {
       path: "/fields/input",
       name: "Input",
@@ -29,6 +34,11 @@ export default new Router({
       path: "/fields/datetime-picker",
       name: "DateTime Picker",
       component: (resolve) => require(["@/pages/fields/input/dateTimePicker"], resolve)
+    },
+    {
+      path: "/fields/select",
+      name: "Select",
+      component: (resolve) => require(["@/pages/fields/select/select"], resolve)
     },
     {
       path: "/fields/time-picker",

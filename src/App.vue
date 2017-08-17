@@ -54,6 +54,7 @@ body {
   -webkit-transition: all .5s ease;
   padding-left: 0;
   transition: all .5s ease;
+
   #sidebar-wrapper {
     left: $sidebar-width;
     margin-left: - $sidebar-width;
@@ -66,9 +67,9 @@ body {
     }
 
     #page-content-wrapper {
-      // margin-right: - $sidebar-width;
       padding: 15px;
-      position: absolute; // width: calc(100% - $sidebar-width);
+      position: absolute;
+      width: calc(100% - #{$sidebar-width});
     }
   }
 }
