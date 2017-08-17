@@ -49,7 +49,10 @@ export default {
       }
     },
     options: {
-      type: Object
+      type: Object,
+      default() {
+        return {}
+      }
     }
   },
   data() {
@@ -59,7 +62,7 @@ export default {
   },
   methods: {
     // Value manipulation
-    set(value, dirty = true) {
+    set(value = null, dirty = true) {
       this.state = dirty ? State.set(this.state, State.DIRTY) : State.unset(this.state, State.CHANGED)
 
       if (this.isMultiple) {
@@ -71,6 +74,9 @@ export default {
     get() {
       // return this.vuex ? this.state[this.name] : this.value
       return this.value
+    },
+    format() {
+      return `${this.isMultiple ? this.get().join(", ") : this.get()}`
     },
     reset() {
       this.state = State.set(this.state, State.RESETED)

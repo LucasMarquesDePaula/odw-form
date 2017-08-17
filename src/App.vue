@@ -23,7 +23,6 @@
 <script>
 import "bootstrap/dist/css/bootstrap.css"
 import "font-awesome/css/font-awesome.css"
-import "metismenu/dist/metisMenu.min.css"
 
 import SidebarNav from "./SidebarNav"
 

@@ -21,9 +21,19 @@ export default new Router({
       component: (resolve) => require(["@/pages/fields/input/input"], resolve)
     },
     {
+      path: "/fields/date-picker",
+      name: "Date Picker",
+      component: (resolve) => require(["@/pages/fields/input/datePicker"], resolve)
+    },
+    {
       path: "/fields/datetime-picker",
       name: "DateTime Picker",
-      component: (resolve) => require(["@/pages/fields/input/datetimePicker"], resolve)
+      component: (resolve) => require(["@/pages/fields/input/dateTimePicker"], resolve)
+    },
+    {
+      path: "/fields/time-picker",
+      name: "Time Picker",
+      component: (resolve) => require(["@/pages/fields/input/timePicker"], resolve)
     }
   ]
 })

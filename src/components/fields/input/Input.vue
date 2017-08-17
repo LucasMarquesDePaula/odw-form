@@ -3,7 +3,7 @@
     <of-label :text="label"></of-label>
     <div class="input-group" :class="inputGroup.class">
       <of-add-on v-if="addons && addons.left" :html="addons.left"></of-add-on>
-      <input :type="input.type" :value="input.value" @change="input.change" class="form-control" />
+      <input :readonly="input.readonly || false" :type="input.type" :value="formatted" @change="(event) => input.change && input.change(event)" @click="(event) => input.click && input.click(event)" @focus="(event) => input.focus && input.focus(event)" @focusout="(event) => input.focusout && input.focusout(event)" class="form-control" />
       <of-add-on v-if="addons && addons.right" :html="addons.right"></of-add-on>
     </div>
   </div>
@@ -44,25 +44,17 @@ export default {
   },
   computed: {
     input() {
+      const self = this
       const input = {}
-      // const self = this
 
       // type
       input.type = this.isHidden ? "hidden"
         : this.isSecret ? "password"
           : "text"
 
-      // value
-      try {
-        input.value = this.isMultiple ? this.get()[0] : this.get()
-      } catch (error) {
-        console.warn(error)
-      }
-      input.value = input.value || ""
-
       // @change
       input.change = (event) => {
-        this.set(event.currentTarget.value)
+        self.set(event.currentTarget.value)
       }
 
       return input
@@ -78,13 +70,6 @@ export default {
 
       return inputGroup
     }
-    // formGroup() {
-    //   return {
-    //     class: {
-    //       hidden: this.isHidden
-    //     }
-    //   }
-    // }
   },
   methods: {
     focus() {

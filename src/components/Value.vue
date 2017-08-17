@@ -8,6 +8,21 @@ export default {
     value: {
       type: types
     }
+  },
+  data() {
+    return {
+      formatted: ""
+    }
+  },
+  methods: {
+    format() {
+      return `${this.value}`
+    }
+  },
+  watch: {
+    value(value) {
+      this.formatted = this.format()
+    }
   }
 }
 </script>
