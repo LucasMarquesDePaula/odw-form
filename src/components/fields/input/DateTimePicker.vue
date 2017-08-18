@@ -5,6 +5,7 @@ import "eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min
 import $ from "jquery"
 import Input from "./Input"
 import each from "lodash/each"
+import isUndefined from "lodash/isUndefined"
 import moment from "moment"
 
 window.$ = window.jQuery = $
@@ -16,7 +17,6 @@ function $dateTimePicker(vm) {
 function options(vm) {
   const options = {
     format: "DD/MM/YYYY HH:mm",
-    // keepInvalid: true,
     locale: "pt-br"
   }
 
@@ -28,7 +28,7 @@ function options(vm) {
 
   each(properties, (property) => {
     const value = vm.options[property]
-    if (value) {
+    if (!isUndefined(value)) {
       options[property] = vm.options[property]
     }
   })

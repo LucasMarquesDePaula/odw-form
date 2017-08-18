@@ -5,6 +5,7 @@ import State from "./State"
 import Value from "./Value"
 
 import isArray from "lodash/isArray"
+import isUndefined from "lodash/isUndefined"
 
 export default {
   components: {
@@ -62,10 +63,12 @@ export default {
   },
   methods: {
     // Value manipulation
-    set(value = null, dirty = true) {
+    set(value, dirty = true) {
       this.state = dirty ? State.set(this.state, State.DIRTY) : State.unset(this.state, State.CHANGED)
 
-      if (this.isMultiple) {
+      if (isUndefined(value) || (isArray(value) && !value.length)) {
+        this.$emit("input")
+      } else if (this.isMultiple) {
         this.$emit("input", isArray(value) ? value : new Array(value))
       } else {
         this.$emit("input", isArray(value) ? value[0] : value)
@@ -76,7 +79,8 @@ export default {
       return this.value
     },
     format() {
-      return `${this.isMultiple ? this.get().join(", ") : this.get()}`
+      const value = this.get()
+      return `${this.isMultiple && value ? value.join(", ") : this.get()}`
     },
     reset() {
       this.state = State.set(this.state, State.RESETED)

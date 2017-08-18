@@ -7,7 +7,7 @@
     </li>
     <li>
       <a class="has-arrow" href="#">
-        Fields
+        Input
       </a>
       <ul aria-expanded="true">
         <li>
@@ -38,6 +38,18 @@
         <li>
           <a href="#/fields/time-picker">
             TimePicker
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a class="has-arrow" href="#">
+        Select
+      </a>
+      <ul aria-expanded="true">
+        <li>
+          <a href="#/fields/select">
+            Select
           </a>
         </li>
       </ul>
