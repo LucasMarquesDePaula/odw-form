@@ -6,9 +6,7 @@
 </template>
 
 <script>
-// import "select2"
 import "select2/dist/js/select2.js"
-
 import "select2/dist/css/select2.min.css"
 
 import $ from "jquery"
@@ -18,59 +16,23 @@ import Label from "../../Label"
 import State from "../../State"
 
 import each from "lodash/each"
-import isUndefined from "lodash/isUndefined"
+import merge from "../../utils/merge.js"
 
 function $select2(vm) {
   return $(vm.$el).find("select")
 }
 
 function options(vm) {
-  const options = {
-    allowClear: true,
-    closeOnSelect: vm.isMultiple === false,
-    placeholder: vm.placeholder || vm.label,
-    width: "100%"
-  }
-
-  if (!vm.options) {
-    return options
-  }
-
-  const properties = [
-    "ajax",
-    "amdBase",
-    "amdLanguageBase",
-    "closeOnSelect",
-    "createTag",
-    "data",
-    "debug",
-    "dir",
-    "dropdownAutoWidth",
-    "dropdownParent",
-    "escapeMarkup",
-    "insertTag",
-    "language",
-    "matcher",
-    "maximumInputLength",
-    "maximumSelectionLength",
-    "minimumInputLength",
-    "minimumResultsForSearch",
-    "selectOnClose",
-    "sorter",
-    "tags",
-    "templateResult",
-    "templateSelection",
-    "theme",
-    "width"
-  ]
-
-  each(properties, (property) => {
-    const value = vm.options[property]
-    if (!isUndefined(value)) {
-      options[property] = vm.options[property]
-    }
-  })
-  return options
+  return merge(
+    {
+      allowClear: true,
+      closeOnSelect: vm.isMultiple === false,
+      placeholder: vm.placeholder || vm.label,
+      width: "100%"
+    },
+    ["ajax", "amdBase", "amdLanguageBase", "closeOnSelect", "createTag", "data", "debug", "dir", "dropdownAutoWidth", "dropdownParent", "escapeMarkup", "insertTag", "language", "matcher", "maximumInputLength", "maximumSelectionLength", "minimumInputLength", "minimumResultsForSearch", "selectOnClose", "sorter", "tags", "templateResult", "templateSelection", "theme", "width"],
+    vm.options
+  )
 }
 
 export default {
@@ -114,6 +76,16 @@ export default {
   methods: {
     focus() {
       this.$el.getElementsByTagName("select")[0].focus()
+    }
+  },
+  watch: {
+    options() {
+      // TODO
+      // const self = this
+      // $dateTimePicker(this)
+      //   .datetimepicker({
+      //     data: options(value)
+      //   })
     }
   },
   destroyed() {

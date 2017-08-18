@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export default function maskit (value, mask, masked = true, tokens) {
   value = value || ''
   mask = mask || ''

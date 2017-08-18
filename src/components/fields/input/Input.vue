@@ -3,7 +3,7 @@
     <of-label :text="label"></of-label>
     <div class="input-group" :class="inputGroup.class">
       <of-add-on v-if="addons && addons.left" :html="addons.left"></of-add-on>
-      <input :readonly="input.readonly || false" :type="input.type" :value="formatted" @change="(event) => input.change && input.change(event)" @click="(event) => input.click && input.click(event)" @focus="(event) => input.focus && input.focus(event)" @focusout="(event) => input.focusout && input.focusout(event)" class="form-control" />
+      <input :placeholder="input.placeholder" :readonly="input.readonly || false" :type="input.type" :value="formatted" @change="(event) => input.change && input.change(event)" @click="(event) => input.click && input.click(event)" @focus="(event) => input.focus && input.focus(event)" @focusout="(event) => input.focusout && input.focusout(event)" @input="(event) => input.input && input.input(event)" v-component="options" class="form-control" />
       <of-add-on v-if="addons && addons.right" :html="addons.right"></of-add-on>
     </div>
   </div>
@@ -22,6 +22,11 @@ export default {
     [Label.name]: Label
   },
   extends: Field,
+  directives: {
+    component(el, binding) {
+      // silence is golden
+    }
+  },
   props: {
     addons: {
       type: [Object],
@@ -47,13 +52,16 @@ export default {
       const self = this
       const input = {}
 
-      // type
+      // :placeholder
+      input.placeholder = this.placeholder
+
+      // :type
       input.type = this.isHidden ? "hidden"
         : this.isSecret ? "password"
           : "text"
 
-      // @change
-      input.change = (event) => {
+      // @input
+      input.input = (event) => {
         self.set(event.currentTarget.value)
       }
 

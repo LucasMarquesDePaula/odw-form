@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export default function dynamicMask (maskit, masks, tokens) {
   masks = masks.sort((a, b) => a.length - b.length)
   return function (value, mask, masked = true) {

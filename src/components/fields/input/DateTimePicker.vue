@@ -4,8 +4,8 @@ import "eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min
 
 import $ from "jquery"
 import Input from "./Input"
-import each from "lodash/each"
-import isUndefined from "lodash/isUndefined"
+
+import merge from "../../utils/merge.js"
 import moment from "moment"
 
 window.$ = window.jQuery = $
@@ -15,24 +15,14 @@ function $dateTimePicker(vm) {
 }
 
 function options(vm) {
-  const options = {
-    format: "DD/MM/YYYY HH:mm",
-    locale: "pt-br"
-  }
-
-  if (!vm.options) {
-    return options
-  }
-
-  const properties = ["format", "dayViewHeaderFormat", "extraFormats", "stepping", "minDate", "maxDate", "useCurrent", "collapse", "locale", "defaultDate", "disabledDates", "enabledDates", "icons", "useStrict", "sideBySide", "daysOfWeekDisabled", "calendarWeeks", "viewMode", "toolbarPlacement", "showTodayButton", "showClear", "showClose", "widgetPositioning", "widgetParent", "keepOpen", "inline", "keepInvalid", "keyBinds", "debug", "ignoreReadonly", "disabledTimeIntervals", "allowInputToggle", "focusOnShow", "enabledHours", "disabledHours", "viewDate", "tooltips"]
-
-  each(properties, (property) => {
-    const value = vm.options[property]
-    if (!isUndefined(value)) {
-      options[property] = vm.options[property]
-    }
-  })
-  return options
+  return merge(
+    {
+      format: "DD/MM/YYYY HH:mm",
+      locale: "pt-br"
+    },
+    ["format", "dayViewHeaderFormat", "extraFormats", "stepping", "minDate", "maxDate", "useCurrent", "collapse", "locale", "defaultDate", "disabledDates", "enabledDates", "icons", "useStrict", "sideBySide", "daysOfWeekDisabled", "calendarWeeks", "viewMode", "toolbarPlacement", "showTodayButton", "showClear", "showClose", "widgetPositioning", "widgetParent", "keepOpen", "inline", "keepInvalid", "keyBinds", "debug", "ignoreReadonly", "disabledTimeIntervals", "allowInputToggle", "focusOnShow", "enabledHours", "disabledHours", "viewDate", "tooltips"],
+    vm.options
+  )
 }
 
 
@@ -71,9 +61,9 @@ export default {
     }
   },
   watch: {
-    options(options) {
+    options() {
       const self = this
-      $dateTimePicker(this)
+      $dateTimePicker(self)
         .datetimepicker({
           data: options(self)
         })

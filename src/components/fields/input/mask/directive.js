@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import masker from './masker'
 import tokens from './tokens'
 

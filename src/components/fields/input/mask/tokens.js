@@ -1,4 +1,6 @@
-module.exports = {
+/* eslint-disable */
+
+export default {
   '#': {pattern: /\d/},
   'X': {pattern: /[0-9a-zA-Z]/},
   'S': {pattern: /[a-zA-Z]/},
