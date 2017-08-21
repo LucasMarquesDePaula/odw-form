@@ -25,6 +25,29 @@ function options(vm) {
   )
 }
 
+function create(vm) {
+  const $picker = $dateTimePicker(vm)
+
+  $picker.datetimepicker(options(vm))
+
+  try {
+    $picker.off()
+      .datetimepicker("destroy")
+  } finally {
+    $picker.datetimepicker(options(vm))
+      .on("dp.change", (event) => {
+        const { date } = event
+        try {
+          if (!date.isValid()) {
+            throw new Error("value is not valid")
+          }
+          vm.set(date.toDate())
+        } catch (error) {
+          vm.set()
+        }
+      })
+  }
+}
 
 export default {
   name: "of-datetime-picker",
@@ -61,12 +84,11 @@ export default {
     }
   },
   watch: {
-    options() {
-      const self = this
-      $dateTimePicker(self)
-        .datetimepicker({
-          data: options(self)
-        })
+    options: {
+      handler() {
+        create(this)
+      },
+      deep: true
     }
   },
   destroyed() {
@@ -75,22 +97,7 @@ export default {
       .datetimepicker("destroy")
   },
   mounted() {
-    const self = this
-    const $picker = $dateTimePicker(self)
-
-    $picker.datetimepicker(options(self))
-
-    $picker.on("dp.change", (event) => {
-      const { date } = event
-      try {
-        if (!date.isValid()) {
-          throw new Error("value is not valid")
-        }
-        self.set(date.toDate())
-      } catch (error) {
-        self.set()
-      }
-    })
+    create(this)
   }
 }
 </script>

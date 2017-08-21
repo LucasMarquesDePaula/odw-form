@@ -36,6 +36,11 @@ export default new Router({
       component: (resolve) => require(["@/pages/fields/input/dateTimePicker"], resolve)
     },
     {
+      path: "/fields/mask",
+      name: "Mask",
+      component: (resolve) => require(["@/pages/fields/input/mask"], resolve)
+    },
+    {
       path: "/fields/select",
       name: "Select",
       component: (resolve) => require(["@/pages/fields/select/select"], resolve)

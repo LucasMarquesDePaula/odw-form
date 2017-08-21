@@ -26,6 +26,11 @@
           </a>
         </li>
         <li>
+          <a href="#/fields/mask">
+            Mask
+          </a>
+        </li>
+        <li>
           <a href="#/fields/date-picker">
             DatePicker
           </a>

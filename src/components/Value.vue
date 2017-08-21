@@ -30,6 +30,9 @@ export default {
     value(value) {
       this.formatted = this.format()
     }
+  },
+  created() {
+    this.formatted = this.format()
   }
 }
 </script>

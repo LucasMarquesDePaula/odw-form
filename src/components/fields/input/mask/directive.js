@@ -4,7 +4,7 @@ import masker from './masker'
 import tokens from './tokens'
 
 // https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events#The_old-fashioned_way
-function event (name) {
+function event(name) {
   var evt = document.createEvent('Event')
   evt.initEvent(name, true, true)
   return evt
@@ -29,7 +29,9 @@ export default function (el, binding) {
   }
 
   el.oninput = function (evt) {
-    if (!evt.isTrusted) return // avoid infinite loop
+    if (!evt.isTrusted) {
+      return // avoid infinite loop
+    }
     /* other properties to try to diferentiate InputEvent of Event (custom)
     InputEvent (native)
       cancelable: false
@@ -46,10 +48,10 @@ export default function (el, binding) {
     // by default, keep cursor at same position as before the mask
     var position = el.selectionEnd
     // save the character just inserted
-    var digit = el.value[position-1]
-    el.value = masker(el.value, config.mask, true, config.tokens)
+    var digit = el.value[position - 1]
+    el.value = masker(el.value, config.mask, true, config.tokens || tokens)
     // if the digit was changed, increment position until find the digit again
-    while (position < el.value.length && el.value.charAt(position-1) !== digit) {
+    while (position < el.value.length && el.value.charAt(position - 1) !== digit) {
       position++
     }
     if (el === document.activeElement) {
@@ -58,7 +60,7 @@ export default function (el, binding) {
     el.dispatchEvent(event('input'))
   }
 
-  var newDisplay = masker(el.value, config.mask, true, config.tokens)
+  var newDisplay = masker(el.value, config.mask, true, config.tokens || tokens)
   if (newDisplay !== el.value) {
     el.value = newDisplay
     el.dispatchEvent(event('input'))

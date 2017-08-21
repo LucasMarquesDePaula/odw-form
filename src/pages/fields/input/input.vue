@@ -1,6 +1,5 @@
 <template>
   <div>
-    <of-mask v-model="string0" name="mask" label="Mask" :options="{ mask: ['###.###.###-##', '##.###.###/####-##'] }" />
     <h4>String</h4>
     <of-input v-model="string0" name="string0" label="String 0" />
     <of-input v-model="string1" name="string1" :label="string0" :is-secret="true" :is-hidden="Boolean(string0)" />

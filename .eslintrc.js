@@ -112,6 +112,8 @@ module.exports = {
     "no-loop-func": "error",
     // disallow new operators with the Function object
     "no-new-func": "error",
+    // disallow new operators with the String, Number, and Boolean objects
+    "no-new-wrappers": 0,
     // disallow reassigning function parameters
     "no-param-reassign": "warn",
     // disallow the use of the __proto__ property	

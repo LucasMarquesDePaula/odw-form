@@ -2,7 +2,7 @@
   <div>
     <h4>Date Time</h4>
     <of-datetime-picker v-model="dateTime0" name="dateTime0" label="DateTime 0" /> {{dateTime0 | dateTime}}
-    <of-datetime-picker v-model="dateTime1" name="dateTime1" label="DateTime 1" :options="options1" />
+    <of-datetime-picker v-model="dateTime1" name="dateTime1" label="DateTime 1" :options="options0"/>
     <of-input v-model="options0.format" name="options0-format" label="Format 1" /> {{dateTime1 | dateTime}}
   </div>
 </template>

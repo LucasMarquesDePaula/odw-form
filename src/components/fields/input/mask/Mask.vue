@@ -14,26 +14,20 @@ function options(vm) {
     vm.options)
 }
 
+function format(vm, value) {
+  if (!value) {
+    return value
+  }
+
+  const { mask, masked, tokens } = options(vm)
+  return masker(value, mask, masked, tokens)
+}
+
 export default {
   name: "of-mask",
   extends: Input,
   directives: {
     component
-  },
-  data() {
-    return {
-      lastValue: null, // avoid unecessary emit when has no change
-      display: this.value
-    }
-  },
-  watch: {
-    options() {
-      const { mask, masked, tokens } = options(this)
-      const value = masker(this.value, mask, masked, tokens)
-      if ((this.isMultiple ? this.get()[0] : this.get()) !== value) {
-        this.set(value)
-      }
-    }
   },
   computed: {
     input() {
@@ -41,17 +35,33 @@ export default {
       const input = {}
 
       // :placeholder
-      input.placeholder = this.placeholder
+      input.placeholder = this.placeholder || this.options.mask
 
       // @input
       input.input = (event) => {
-        if (!event.isTrusted) {
+        if (event.isTrusted) {
           return // ignore native event
         }
-        self.set(event.currentTarget.value)
+        self.set(format(self, event.currentTarget.value))
       }
 
       return input
+    }
+  },
+  methods: {
+    format() {
+      return format(this, this.value)
+    }
+  },
+  mounted() {
+    this.set(this.format())
+  },
+  watch: {
+    options: {
+      handler() {
+        this.set(this.format())
+      },
+      deep: true
     }
   }
 }
