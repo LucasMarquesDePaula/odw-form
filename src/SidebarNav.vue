@@ -11,11 +11,6 @@
       </a>
       <ul aria-expanded="true">
         <li>
-          <a href="#/fields/autocomplete">
-            Autocomplete
-          </a>
-        </li>
-        <li>
           <a href="#/fields/field">
             Field
           </a>
@@ -53,16 +48,14 @@
       </ul>
     </li>
     <li>
-      <a class="has-arrow" href="#">
+      <a href="#/fields/select">
         Select
       </a>
-      <ul aria-expanded="true">
-        <li>
-          <a href="#/fields/select">
-            Select
-          </a>
-        </li>
-      </ul>
+    </li>
+    <li>
+      <a href="#/fields/switch">
+        Switch
+      </a>
     </li>
   </ul>
 </template>

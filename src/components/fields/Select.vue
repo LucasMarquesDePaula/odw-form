@@ -6,17 +6,17 @@
 </template>
 
 <script>
-import "select2/dist/js/select2.js"
+import "select2/dist/js/select2.min.js"
 import "select2/dist/css/select2.min.css"
 
 import $ from "jquery"
 
-import Field from "../../Field"
-import Label from "../../Label"
-import State from "../../State"
+import Field from "../Field"
+import Label from "../Label"
+import State from "../State"
 
 import each from "lodash/each"
-import merge from "../../utils/merge.js"
+import merge from "../utils/merge.js"
 
 function $select2(vm) {
   return $(vm.$el).find("select")

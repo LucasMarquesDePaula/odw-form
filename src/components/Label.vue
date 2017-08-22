@@ -33,8 +33,8 @@ export default {
 }
 </script>
 
-<style>
-/* label {
-   display: block; 
-} */
+<style lang="scss" scoped>
+label {
+  display: block;
+}
 </style>

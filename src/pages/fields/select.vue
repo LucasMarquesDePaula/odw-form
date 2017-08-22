@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Select from "@/components/fields/select/Select"
+import Select from "@/components/fields/Select"
 
 import each from "lodash/each"
 import isArray from "lodash/isArray"

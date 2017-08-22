@@ -48,7 +48,12 @@ export default new Router({
     {
       path: "/fields/select",
       name: "Select",
-      component: (resolve) => require(["@/pages/fields/select/select"], resolve)
+      component: (resolve) => require(["@/pages/fields/select"], resolve)
+    },
+    {
+      path: "/fields/switch",
+      name: "Switch",
+      component: (resolve) => require(["@/pages/fields/switch"], resolve)
     },
     {
       path: "/fields/time-picker",

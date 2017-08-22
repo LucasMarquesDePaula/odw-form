@@ -1,6 +1,8 @@
 <template>
   <div>
     <h4>String</h4>
+    <of-input v-model="string0" name="string0" label="Hidden" :is-hidden="true"/>
+    <of-input v-model="string0" name="string0" label="Password" :is-secret="true"/> 
     <of-input v-model="string0" name="string0" label="String 0" :add-ons="{ left: icon, right: icon }"/> {{string0}}
     <h4>Number</h4>
     <of-input v-model="number0" name="number0" label="Number 0" :type="Number" :add-ons="{ left: icon, right: icon }" /> {{number0}}
@@ -12,7 +14,6 @@
 <script>
 import Input from "@/components/fields/input/Input"
 import Mask from "@/components/fields/input/mask/Mask"
-
 
 export default {
   name: "input",
@@ -31,21 +32,6 @@ export default {
     icon() {
       return {
         template: `<span class='fa fa-${this.string0}'></span>`
-      }
-    }
-  },
-  methods: {
-    text() {
-      return () => `${this.msg} (passed by function)`
-    },
-    html() {
-      return () => this.child
-      // `<h1>${this.msg} (passed by function) </h1>`
-    },
-    child() {
-      const { min, msg } = this
-      return {
-        template: `<span>Digite mais ${min - msg.length} caracteres</span>`
       }
     }
   }
