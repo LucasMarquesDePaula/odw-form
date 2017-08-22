@@ -41,6 +41,11 @@ export default new Router({
       component: (resolve) => require(["@/pages/fields/input/mask"], resolve)
     },
     {
+      path: "/fields/number",
+      name: "Number",
+      component: (resolve) => require(["@/pages/fields/input/number"], resolve)
+    },
+    {
       path: "/fields/select",
       name: "Select",
       component: (resolve) => require(["@/pages/fields/select/select"], resolve)

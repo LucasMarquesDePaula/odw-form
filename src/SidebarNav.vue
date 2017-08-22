@@ -31,6 +31,11 @@
           </a>
         </li>
         <li>
+          <a href="#/fields/number">
+            Number
+          </a>
+        </li>
+        <li>
           <a href="#/fields/date-picker">
             DatePicker
           </a>

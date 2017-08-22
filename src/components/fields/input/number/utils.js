@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 import defaults from "./options"
 
 function format(input, opt = defaults) {
   if (typeof input === "number") {
     input = input.toFixed(fixed(opt.precision))
   }
-  const negative = input.indexOf("-") >= 0 ? "-" : ""
+  const negative = input.indexOf("-") !== -1 && input.indexOf("+") === -1 ? "-" : ""
 
   const numbers = onlyNumbers(input)
   const currency = numbersToCurrency(numbers, opt.precision)

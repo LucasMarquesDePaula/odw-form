@@ -29,7 +29,7 @@ module.exports = {
     // disallow duplicate case labels
     "no-duplicate-case": "error",
     // disallow empty block statements
-    "no-empty": "error",
+    "no-empty": "warn",
     // disallow empty character classes in regular expressions
     "no-empty-character-class": "error",
     // disallow reassigning exceptions in catch clauses
@@ -113,7 +113,7 @@ module.exports = {
     // disallow new operators with the Function object
     "no-new-func": "error",
     // disallow new operators with the String, Number, and Boolean objects
-    "no-new-wrappers": 0,
+    "no-new-wrappers": "warn",
     // disallow reassigning function parameters
     "no-param-reassign": "warn",
     // disallow the use of the __proto__ property	

@@ -2,11 +2,11 @@
 import Input from "../Input"
 
 import component from "./directive"
+import isArray from "lodash/isArray"
 import masker from "./masker"
 import merge from "../../../utils/merge.js"
 
 import tokens from "./tokens"
-
 
 function options(vm) {
   return merge({ tokens: tokens },
@@ -35,7 +35,7 @@ export default {
       const input = {}
 
       // :placeholder
-      input.placeholder = this.placeholder || this.options.mask
+      input.placeholder = this.placeholder || (isArray(this.options.mask) ? this.options.mask.join(", ") : this.options.mask)
 
       // @input
       input.input = (event) => {

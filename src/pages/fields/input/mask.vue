@@ -21,8 +21,8 @@ const masks = [
   { label: "US ZIP", model: "12345", options: { mask: "#####", masked } },
   { label: "Brazil Zip", model: "87010-230", options: { mask: "#####-###", masked } },
   { label: "Brazil CPF/CNPJ", model: "12345678901", options: { mask: ["###.###.###-##", "##.###.###/####-##"], masked } },
-  { label: "US Phone", model: "2025550134", options: { mask: "+1 (###) ###-####" } },
-  { label: "Brazil Phone", model: "4432211266", options: { mask: "+55 (##) ####-####", masked } }
+  { label: "US Phone", model: "2025550134", options: { mask: "+1 (###) ###-####", masked } },
+  { label: "Brazil Phone", model: "4432211266", options: { mask: ["+55 (##) ####-####", "+55 (##) #####-####"], masked } }
 ]
 
 export default {

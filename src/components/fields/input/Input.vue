@@ -86,3 +86,9 @@ export default {
   }
 }
 </script>
+
+<<style scoped>
+.input-group {
+    width: 100%;
+}
+</style>
