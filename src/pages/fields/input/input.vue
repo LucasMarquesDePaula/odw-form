@@ -1,14 +1,11 @@
 <template>
   <div>
     <h4>String</h4>
-    <of-input v-model="string0" name="string0" label="String 0" />
-    <of-input v-model="string1" name="string1" :label="string0" :is-secret="true" :is-hidden="Boolean(string0)" />
+    <of-input v-model="string0" name="string0" label="String 0" :add-ons="{ left: icon, right: icon }"/> {{string0}}
     <h4>Number</h4>
-    <of-input v-model="number0" name="number0" label="Number 0" />
-    <h4>File</h4>
-    <of-input v-model="file0" name="file0" label="File 0" />
+    <of-input v-model="number0" name="number0" label="Number 0" :type="Number" :add-ons="{ left: icon, right: icon }" /> {{number0}}
     <h4>Date</h4>
-    <of-input v-model="date0" name="date0" label="Date 0" />
+    <of-input v-model="date0" name="date0" label="Date 0" :type="Date" :add-ons="{ left: icon, right: icon }"/> {{date0}}
   </div>
 </template>
 
@@ -25,10 +22,8 @@ export default {
   },
   data() {
     return {
-      string0: "",
-      string1: "",
+      string0: "star",
       number0: "",
-      file0: "",
       date0: ""
     }
   },
@@ -53,13 +48,6 @@ export default {
         template: `<span>Digite mais ${min - msg.length} caracteres</span>`
       }
     }
-  },
-  watch: {
-    "change.string0": function (value, component) {
-      this.answer = "Waiting for you to stop typing..."
-      this.getAnswer()
-    }
   }
-
 }
 </script>

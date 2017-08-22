@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style>
-label {
-  display: block;
-}
+/* label {
+   display: block; 
+} */
 </style>

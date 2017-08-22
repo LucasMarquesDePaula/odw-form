@@ -2,9 +2,9 @@
   <div class="form-group">
     <of-label :text="label"></of-label>
     <div class="input-group" :class="inputGroup.class">
-      <of-add-on v-if="addons && addons.left" :html="addons.left"></of-add-on>
+      <of-add-on v-if="addOns && addOns.left" :html="addOns.left"></of-add-on>
       <input :placeholder="input.placeholder" :readonly="input.readonly || false" :type="input.type" :value="formatted" @change="(event) => input.change && input.change(event)" @click="(event) => input.click && input.click(event)" @focus="(event) => input.focus && input.focus(event)" @focusout="(event) => input.focusout && input.focusout(event)" @input="(event) => input.input && input.input(event)" v-component="options" class="form-control" />
-      <of-add-on v-if="addons && addons.right" :html="addons.right"></of-add-on>
+      <of-add-on v-if="addOns && addOns.right" :html="addOns.right"></of-add-on>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
     }
   },
   props: {
-    addons: {
+    addOns: {
       type: [Object],
       default() {
         return {}
@@ -48,6 +48,11 @@ export default {
     }
   },
   computed: {
+    clazz() {
+      return {
+        "is-boolean": this.type === Boolean
+      }
+    },
     input() {
       const self = this
       const input = {}
@@ -58,7 +63,9 @@ export default {
       // :type
       input.type = this.isHidden ? "hidden"
         : this.isSecret ? "password"
-          : "text"
+            : this.type === Date ? "date"
+                : this.type === Number ? "number"
+                  : "text"
 
       // @input
       input.input = (event) => {
@@ -87,8 +94,8 @@ export default {
 }
 </script>
 
-<<style scoped>
+<style lang="scss" scoped>
 .input-group {
-    width: 100%;
+  width: 100%;
 }
 </style>
