@@ -3,18 +3,21 @@ var utils = require("./utils")
 var config = require("../config")
 var vueLoaderConfig = require("./vue-loader.conf")
 
+var isProduction = process.env.NODE_ENV === "production"
+
 function resolve(dir) {
   return path.join(__dirname, "..", dir)
 }
 
 module.exports = {
   entry: {
-    app: ["babel-polyfill", "./src/main.js"]
+    app: isProduction ? ["./src/main.prod.js"] : ["./src/main.js"]
   },
   output: {
     path: config.build.assetsRoot,
     filename: "[name].js",
-    publicPath: process.env.NODE_ENV === "production" ? config.build.assetsPublicPath : config.dev.assetsPublicPath
+    library: "ODWForm",
+    publicPath: isProduction ? config.build.assetsPublicPath : config.dev.assetsPublicPath
   },
   resolve: {
     extensions: [".js", ".vue", ".json"],
@@ -49,7 +52,7 @@ module.exports = {
         loader: "url-loader",
         options: {
           limit: 10000,
-          name: utils.assetsPath("img/[name].[hash:7].[ext]")
+          name: utils.assetsPath(isProduction ? "img/[name].[ext]" : "img/[name].[hash:7].[ext]")
         }
       },
       {
@@ -57,7 +60,7 @@ module.exports = {
         loader: "url-loader",
         options: {
           limit: 10000,
-          name: utils.assetsPath("media/[name].[hash:7].[ext]")
+          name: utils.assetsPath(isProduction ? "media/[name].[ext]" : "media/[name].[hash:7].[ext]")
         }
       },
       {
@@ -65,7 +68,7 @@ module.exports = {
         loader: "url-loader",
         options: {
           limit: 10000,
-          name: utils.assetsPath("fonts/[name].[hash:7].[ext]")
+          name: utils.assetsPath(isProduction ? "fonts/[name].[ext]" : "fonts/[name].[hash:7].[ext]")
         }
       }
     ]

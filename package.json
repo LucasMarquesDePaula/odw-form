@@ -16,7 +16,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "bootstrap-datepicker": "^1.7.1",
-    "bootstrap-switch":"^3.3.4",
+    "bootstrap-switch": "^3.3.4",
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
     "font-awesome": "^4.7.0",
     "fs": "0.0.1-security",
@@ -46,6 +46,7 @@
     "cross-spawn": "^5.1.0",
     "css-loader": "^0.28.4",
     "cssnano": "^3.10.0",
+    "directory-tree": "^2.0.0",
     "enumify": "^1.0.4",
     "eslint": "^4.4.1",
     "eslint-config-standard": "^10.2.1",
