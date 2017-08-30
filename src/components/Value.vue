@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     format() {
-      return `${this.value}`
+      return `${this.value || ""}`
     }
   },
   watch: {

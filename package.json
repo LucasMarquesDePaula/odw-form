@@ -19,7 +19,6 @@
     "bootstrap-switch": "^3.3.4",
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
     "font-awesome": "^4.7.0",
-    "fs": "0.0.1-security",
     "jquery": "^3.2.1",
     "metismenu": "^2.7.0",
     "select2": "^4.0.3",

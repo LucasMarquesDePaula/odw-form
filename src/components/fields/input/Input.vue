@@ -3,7 +3,7 @@
     <of-label v-if="!isHidden" :text="label"></of-label>
     <div class="input-group" :class="inputGroup.class">
       <of-add-on v-if="addOns && addOns.left" :html="addOns.left"></of-add-on>
-      <input :placeholder="input.placeholder" :readonly="input.readonly || false" :type="input.type" :value="formatted" @change="(event) => input.change && input.change(event)" @click="(event) => input.click && input.click(event)" @focus="(event) => input.focus && input.focus(event)" @focusout="(event) => input.focusout && input.focusout(event)" @input="(event) => input.input && input.input(event)" v-component="options" class="form-control" />
+      <input :placeholder="input.placeholder" :readonly="input.readonly || false" :type="input.type" :value="formatted" @change="(event) => input.change && input.change(event)" @click="(event) => input.click && input.click(event)" @focus="(event) => input.focus && input.focus(event)" @focusout="(event) => input.focusout && input.focusout(event)" @input="(event) => input.input && input.input(event)" v-component="options" class="form-control input-sm" />
       <of-add-on v-if="addOns && addOns.right" :html="addOns.right"></of-add-on>
     </div>
   </div>
@@ -48,11 +48,6 @@ export default {
     }
   },
   computed: {
-    clazz() {
-      return {
-        "is-boolean": this.type === Boolean
-      }
-    },
     input() {
       const self = this
       const input = {}

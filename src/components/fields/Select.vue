@@ -1,7 +1,7 @@
 <template>
   <div class="form-group">
     <of-label :text="label"></of-label>
-    <select :multiple="isMultiple" :readonly="select.readonly || false" class="form-control" />
+    <select :multiple="isMultiple" :readonly="select.readonly || false" class="form-control input-sm" />
   </div>
 </template>
 
@@ -25,6 +25,9 @@ function $select2(vm) {
 function options(vm) {
   return merge(
     {
+      // ajax: {
+      //   delay: 250
+      // },
       allowClear: true,
       closeOnSelect: vm.isMultiple === false,
       placeholder: vm.placeholder || vm.label,
@@ -86,6 +89,11 @@ export default {
       //   .datetimepicker({
       //     data: options(value)
       //   })
+    },
+    value() {
+      $select2(this)
+        .val(this.value)
+        .trigger("change.select2")
     }
   },
   destroyed() {

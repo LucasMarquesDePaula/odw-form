@@ -13,10 +13,14 @@
     <p>{{string2 | filter}}</p>
     <of-select v-model="number0" name="number0" label="Number 0" :options="options0" :type="Number" />
     <p>{{number0 | filter}}</p>
+    <of-select v-model="number0" name="number1" label="Number 1" :options="options0" :type="Number" />
+    <of-input v-model="number0" name="number1" label="Number 1" :type="Number" />
+    <p>{{number0 | filter}}</p>
   </div>
 </template>
 
 <script>
+import Input from "@/components/fields/input/Input"
 import Select from "@/components/fields/Select"
 
 import each from "lodash/each"
@@ -31,7 +35,8 @@ const data = [
 
 export default {
   components: {
-    [Select.name]: Select
+    [Select.name]: Select,
+    [Input.name]: Input
   },
   data() {
     return {

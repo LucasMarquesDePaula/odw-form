@@ -80,7 +80,7 @@ export default {
     },
     format() {
       const value = this.get()
-      return `${this.isMultiple && value ? value.join(", ") : this.get()}`
+      return `${isArray(value) ? value.join(", ") : (value || "")}`
     },
     reset() {
       this.state = State.set(this.state, State.RESETED)

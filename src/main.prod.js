@@ -1,4 +1,3 @@
-
 import DatePicker from "@/components/fields/input/DatePicker"
 import DateTimePicker from "@/components/fields/input/DateTimePicker"
 import Input from "@/components/fields/input/Input"
@@ -19,6 +18,7 @@ function install(Vue) {
   ]
 
   components.forEach((component) => {
+    // window[component.name] = 
     Vue.component(component.name, component)
   })
 }

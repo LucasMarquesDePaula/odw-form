@@ -8,8 +8,6 @@ import Input from "./Input"
 import merge from "../../utils/merge.js"
 import moment from "moment"
 
-window.$ = window.jQuery = $
-
 function $dateTimePicker(vm) {
   return $(vm.$el).find(".input-group")
 }

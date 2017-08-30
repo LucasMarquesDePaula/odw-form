@@ -11,7 +11,7 @@ function resolve(dir) {
 
 module.exports = {
   entry: {
-    app: isProduction ? ["./src/main.prod.js"] : ["./src/main.js"]
+    main: isProduction ? ["./src/main.prod.js"] : ["./src/main.js"]
   },
   output: {
     path: config.build.assetsRoot,
