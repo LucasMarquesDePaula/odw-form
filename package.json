@@ -1,6 +1,6 @@
 {
   "name": "odw-form",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Form helper using Vue.js",
   "author": "IANDev Sistemas",
   "private": true,
