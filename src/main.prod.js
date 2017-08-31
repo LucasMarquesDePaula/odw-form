@@ -31,7 +31,7 @@ export default install
 
 // Install by default if included from script tag
 if (typeof window !== "undefined") {
-  console.log(window, $, moment)
+  // console.log(window, $, moment)
   window.$ = window.jQuery = $
   window.moment = moment
   if (window.Vue) {
