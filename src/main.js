@@ -6,7 +6,7 @@ import App from "./App"
 import Vue from "vue"
 import router from "./router"
 
-window.$ = $
+window.$ = window.jQuery = $
 
 // Vue.config.productionTip = false
 

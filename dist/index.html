@@ -1,1 +1,42 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><title>odw-form</title><link href=/static/css/main.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.js></script><script type=text/javascript src=/static/js/vendor.js></script><script type=text/javascript src=/static/js/main.js></script></body></html>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>odw-form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css" />
+  <link rel="stylesheet" href="./static/css/main.css">
+</head>
+
+<body>
+  <div id="app">
+    <of-switch v-model="switch0" name="switch0"></of-switch>
+    <p>{{switch0}}</p>
+    <of-select v-model="select0" name="select0" :type="String" :is-multiple="true" :options="optionsSelect"></of-select>
+    <p>{{select0}}
+  </div>
+  <script type="text/javascript" src="https://unpkg.com/vue@2.2.6"></script>
+  <script type="text/javascript" src="./static/js/manifest.js"></script>
+  <script type="text/javascript" src="./static/js/vendor.js"></script>
+  <script type="text/javascript" src="./static/js/main.js"></script>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        message: "Hello Vue!",
+        switch0: true,
+        select0: null,
+        optionsSelect: {
+          data: [
+            { id: 1, text: "Option 1" },
+            { id: 2, text: "Option 2" },
+            { id: 3, text: "Option 3" },
+            { id: 4, text: "Option 4" }
+          ]
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

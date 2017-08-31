@@ -24,6 +24,8 @@ module.exports = {
     alias: {
       "vue$": "vue/dist/vue.esm.js",
       "@": resolve("src")
+      // Force all modules to use the same jquery version.
+      // "jquery": resolve("node_modules/jquery/src/jquerye")
     }
   },
   module: {
