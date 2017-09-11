@@ -12,7 +12,8 @@ State.initEnum({
   CHANGED: 1 << ++idx,
   DIRTY: 1 << ++idx,
   RESETED: 1 << ++idx,
-  LOCKED: 1 << ++idx
+  LOCKED: 1 << ++idx,
+  SELF_CHANGED: 1 << ++idx
 })
 
 State.set = (state, value) => state | value

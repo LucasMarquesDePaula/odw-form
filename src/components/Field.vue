@@ -58,13 +58,13 @@ export default {
   },
   data() {
     return {
-      state: State.RESETED
+      SELF_CHANGED: false
     }
   },
   methods: {
     // Value manipulation
     set(value, dirty = true) {
-      this.state = dirty ? State.set(this.state, State.DIRTY) : State.unset(this.state, State.CHANGED)
+      this.SELF_CHANGED = true
 
       if (isUndefined(value) || (isArray(value) && !value.length)) {
         this.$emit("input")

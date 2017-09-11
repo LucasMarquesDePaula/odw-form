@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      boolean0: false      
+      boolean0: false
     }
   }
 }

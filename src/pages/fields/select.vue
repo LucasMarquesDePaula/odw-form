@@ -1,11 +1,11 @@
 <template>
   <div>
     <h4>Select</h4>
-    <of-select v-model="object0" name="object0" label="Object 0" :options="options0" />
+    <of-select v-model="object1" name="object0" label="Object 0" :options="options0" :is-multiple="true" />
     <p>{{object0 | filter}}</p>
     <of-select v-model="object1" name="object1" label="Object 1" :options="options0" :is-multiple="true" />
     <p>{{object1 | filter}}</p>
-    <of-select v-model="string0" name="string0" label="String 0" :options="options0" :type="String" />
+    <of-select v-model="string0" name="string0" label="String 0" :options="{ options: object1 }" :type="String" />
     <p>{{string0 | filter}}</p>
     <of-select v-model="string1" name="string1" label="String 1" :options="options0" :is-multiple="true" :type="String" />
     <p>{{string1 | filter}}</p>
@@ -21,7 +21,7 @@
 
 <script>
 import Input from "@/components/fields/input/Input"
-import Select from "@/components/fields/Select"
+import Select from "@/components/fields/select/Select"
 
 import each from "lodash/each"
 import isArray from "lodash/isArray"
@@ -47,34 +47,10 @@ export default {
       string2: null,
       number0: null,
       options0: {
-        data: data
+        options: data
       },
       options1: {
-        ajax: {
-          url: "https://api.github.com/search/repositories",
-          dataType: "json",
-          delay: 250,
-          data: function (parameters) {
-            return {
-              q: parameters.term,
-              page: parameters.page
-            }
-          },
-          processResults: function (data, page) {
-            return {
-              results: data.items
-            }
-          },
-          cache: true,
-          templateResult
-        },
-        escapeMarkup(markup) {
-          return markup
-        },
-        // closeOnSelect: false,
-        minimumInputLength: 1,
-        templateResult,
-        templateSelection
+        options: data
       }
     }
   },
