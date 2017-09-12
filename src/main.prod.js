@@ -4,7 +4,7 @@ import DatePicker from "@/components/fields/input/DatePicker"
 import DateTimePicker from "@/components/fields/input/DateTimePicker"
 import Input from "@/components/fields/input/Input"
 import Mask from "@/components/fields/input/mask/Mask"
-import Select from "@/components/fields/Select"
+import Select from "@/components/fields/select/Select"
 import Switch from "@/components/fields/Switch"
 import TimePicker from "@/components/fields/input/TimePicker"
 

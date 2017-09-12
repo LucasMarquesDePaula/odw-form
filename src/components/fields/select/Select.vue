@@ -9,16 +9,15 @@
 import "selectize"
 import "selectize/dist/css/selectize.bootstrap3.css"
 
-import $select from "./$select"
+// import $select from "./$select"
 
 import Field from "../../Field"
 import Label from "../../Label"
-import State from "../../State"
 
 import destroy from "./destroy"
 import make from "./make"
+// import options from "./options"
 import setValue from "./setValue"
-import options from "./options"
 
 export default {
   name: "of-select",
@@ -71,24 +70,15 @@ export default {
   watch: {
     options(newValue, oldValue) {
       console.log(this.name, "watch.options")
-      const { selectize } = $select(this).get(0)
-
-      // const value = selectize.getValue()
-
-      // selectize.clearOptions()
-      // selectize.addOption(options(this).options)
-      // selectize.refreshOptions(false)
-      // selectize.setValue(value)
       try {
         destroy(this)
       } catch (error) {
         // silence is golden
+      } finally {
+        make(this)
       }
-
-      make(this)
     },
     value(newValue, oldValue) {
-
       console.log(this.name, "watch.value", this.SELF_CHANGED)
 
       if (!this.SELF_CHANGED) {
