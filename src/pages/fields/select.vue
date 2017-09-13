@@ -1,7 +1,7 @@
 <template>
   <div>
     <h4>Select</h4>
-    <of-select v-model="object1" name="object0" label="Object 0" :options="options0" :is-multiple="true" />
+    <of-select v-model="object0" name="object0" label="Object 0" :options="options0" :is-multiple="true" />
     <p>{{object0 | filter}}</p>
     <of-select v-model="object1" name="object1" label="Object 1" :options="options0" :is-multiple="true" />
     <p>{{object1 | filter}}</p>
@@ -27,10 +27,103 @@ import each from "lodash/each"
 import isArray from "lodash/isArray"
 
 const data = [
-  { id: "0", text: "Option 0" },
-  { id: "1", text: "Option 1" },
-  { id: "2", text: "Option 2" },
-  { id: "3", text: "Option 3" }
+  {
+    idcanal: 14,
+    descricao: "Canal Acougue",
+    situacao: "A",
+    idpessoa: 2,
+    nome: "Canal Acougue",
+    id: 14,
+    text: "Canal Acougue"
+  }, {
+    idcanal: 16,
+    descricao: "Canal Padaria",
+    situacao: "A",
+    idpessoa: 2,
+    nome: "Canal Padaria",
+    id: 16,
+    text: "Canal Padaria"
+  }, {
+    idcanal: 17,
+    descricao: "Canal Diretoria",
+    situacao: "A",
+    idpessoa: 1,
+    nome: "Canal Diretoria",
+    id: 17,
+    text: "Canal Diretoria"
+  }, {
+    idcanal: 18,
+    descricao: "Canal Refeitório",
+    situacao: "A",
+    idpessoa: 1,
+    nome: "Canal Refeitório",
+    id: 18,
+    text: "Canal Refeitório"
+  }, {
+    idcanal: 20,
+    descricao: "Canal Acougue",
+    situacao: "A",
+    idpessoa: 25,
+    nome: "Canal Acougue",
+    id: 20,
+    text: "Canal Acougue"
+  }, {
+    idcanal: 23,
+    descricao: "Canal Marketing",
+    situacao: "A",
+    idpessoa: 25,
+    nome: "Canal Marketing",
+    id: 23,
+    text: "Canal Marketing"
+  }, {
+    idcanal: 21,
+    descricao: "Canal Rotisseria",
+    situacao: "A",
+    idpessoa: 25,
+    nome: "Canal Rotisseria",
+    id: 21,
+    text: "Canal Rotisseria"
+  }, {
+    idcanal: 24,
+    descricao: "Canal Padaria",
+    situacao: "A",
+    idpessoa: 25,
+    nome: "Canal Padaria",
+    id: 24,
+    text: "Canal Padaria"
+  }, {
+    idcanal: 1,
+    descricao: "Canal Apresentação",
+    situacao: "A",
+    idpessoa: 1,
+    nome: "Canal Apresentação",
+    id: 1,
+    text: "Canal Apresentação"
+  }, {
+    idcanal: 25,
+    descricao: "Fila de Atendimento",
+    situacao: "A",
+    idpessoa: 2,
+    nome: "Fila de Atendimento",
+    id: 25,
+    text: "Fila de Atendimento"
+  }, {
+    idcanal: 26,
+    descricao: "Canal Açougue",
+    situacao: "A",
+    idpessoa: 29,
+    nome: "Canal Açougue",
+    id: 26,
+    text: "Canal Açougue"
+  }, {
+    idcanal: 27,
+    descricao: "Canal Marketing",
+    situacao: "A",
+    idpessoa: 29,
+    nome: "Canal Marketing",
+    id: 27,
+    text: "Canal Marketing"
+  }
 ]
 
 export default {

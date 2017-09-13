@@ -70,12 +70,16 @@ export default {
   watch: {
     options(newValue, oldValue) {
       console.log(this.name, "watch.options")
-      try {
-        destroy(this)
-      } catch (error) {
-        // silence is golden
-      } finally {
-        make(this)
+      if (!this.SELF_CHANGED) {
+        try {
+          destroy(this)
+        } catch (error) {
+          // silence is golden
+        } finally {
+          make(this)
+        }
+      } else {
+        this.SELF_CHANGED = false
       }
     },
     value(newValue, oldValue) {

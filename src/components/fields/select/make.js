@@ -1,6 +1,7 @@
 import $select from "./$select"
 import each from "lodash/each"
 import options from "./options"
+// import setValue from "./setValue"
 export default (vm) => {
   console.debug("make", vm.name, $select(vm))
   $select(vm)
