@@ -126,6 +126,17 @@ const data = [
   }
 ]
 
+
+// const data = [
+//   { situacao: { id: "A", text: "Ativo" }, idcanal: 1, nome: "Canal Apresentação", id: 1, text: "Canal Apresentação", idpessoa: 1, descricao: "Canal Apresentação" },
+//   { situacao: { id: "A", text: "Ativo" }, idcanal: 14, nome: "Canal Acougue", id: 14, text: "Canal Acougue", idpessoa: 2, descricao: "Canal Acougue" }
+// ]
+
+// const data = [
+//   { id: 1, text: "Canal Apresentação" },
+//   { id: 14, text: "Canal Acougue" }
+// ]
+
 export default {
   components: {
     [Select.name]: Select,

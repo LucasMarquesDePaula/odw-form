@@ -88,8 +88,6 @@ export default {
       if (!this.SELF_CHANGED) {
         setValue(this)
         // selectize.setValue(value, true)
-      } else {
-        this.SELF_CHANGED = false
       }
     }
   },

@@ -2,7 +2,7 @@ import merge from "../../utils/merge.js"
 export default (vm) => merge(
   {
     closeAfterSelect: vm.isMultiple === false,
-    placeholder: vm.placeholder || vm.label,
+    placeholder: vm.placeholder,
     valueField: "id",
     labelField: "text"
   },
