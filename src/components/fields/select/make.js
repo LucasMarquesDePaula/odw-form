@@ -2,16 +2,16 @@ import $select from "./$select"
 import each from "lodash/each"
 import isArray from "lodash/isArray"
 import options from "./options"
-// import setValue from "./setValue"
+import setValue from "./setValue"
 
 export default (vm) => {
   console.debug("make", vm.name, $select(vm))
+  const opt = options(vm)
   $select(vm)
-    .selectize(options(vm))
+    .selectize(opt)
     .on("change", change)
-    .get(0)
-    .selectize
-    .setValue(vm.value)
+
+  setValue(vm)
 
   function change(event) {
     const values = []

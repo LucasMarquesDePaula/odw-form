@@ -3,7 +3,7 @@
     <h4>Select</h4>
     <of-select v-model="object0" name="object0" label="Object 0" :options="options0" :is-multiple="true" />
     <p>{{object0 | filter}}</p>
-    <of-select v-model="object1" name="object1" label="Object 1" :options="options0" :is-multiple="true" />
+    <of-select v-model="object1" name="object0" label="Object 1" :options="options0" :is-multiple="true" />
     <p>{{object1 | filter}}</p>
     <of-select v-model="string0" name="string0" label="String 0" :options="{ options: object1 }" :type="String" />
     <p>{{string0 | filter}}</p>
@@ -144,8 +144,8 @@ export default {
   },
   data() {
     return {
-      object0: null,
-      object1: null,
+      object0: data[0],
+      object1: data[0],
       string0: null,
       string1: null,
       string2: null,
