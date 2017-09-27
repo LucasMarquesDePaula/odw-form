@@ -62,6 +62,9 @@ export default {
             : this.type === Number ? "number"
               : "text"
 
+      // :readonly
+      input.readonly = this.isLocked
+
       // @input
       input.input = (event) => {
         self.set(event.currentTarget.value)

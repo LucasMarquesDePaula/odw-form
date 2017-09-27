@@ -57,6 +57,11 @@
         Switch
       </a>
     </li>
+    <li>
+      <a href="#/overlay">
+        Overlay
+      </a>
+    </li>
   </ul>
 </template>
 

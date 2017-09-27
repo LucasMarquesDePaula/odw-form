@@ -66,6 +66,9 @@ export default {
       const self = this
       const input = {}
 
+      // :readonly
+      input.readonly = this.isLocked
+
       // @focus
       input.focus = (event) => {
         $dateTimePicker(self)

@@ -99,3 +99,15 @@ export default {
   }
 }
 </script>
+
+
+<style lang="scss">
+.form-group {
+  div.selectize-input {
+    min-height: auto;
+    padding: 4px 12px;
+    border-radius: 0px;
+  }
+}
+</style>
+

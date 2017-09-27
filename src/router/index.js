@@ -59,6 +59,11 @@ export default new Router({
       path: "/fields/time-picker",
       name: "Time Picker",
       component: (resolve) => require(["@/pages/fields/input/timePicker"], resolve)
+    },
+    {
+      path: "/overlay",
+      name: "Overlay",
+      component: (resolve) => require(["@/pages/overlay"], resolve)
     }
   ]
 })

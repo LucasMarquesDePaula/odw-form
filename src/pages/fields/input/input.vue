@@ -3,6 +3,7 @@
     <h4>String</h4>
     <of-input v-model="string0" name="string0" label="Hidden" :is-hidden="true"/>
     <of-input v-model="string0" name="string0" label="Password" :is-secret="true"/> 
+    <of-input v-model="string0" name="string0" label="Locked" :is-locked="true"/> 
     <of-input v-model="string0" name="string0" label="String 0" :add-ons="{ left: icon, right: icon }"/> {{string0}}
     <h4>Number</h4>
     <of-input v-model="number0" name="number0" label="Number 0" :type="Number" :add-ons="{ left: icon, right: icon }" /> {{number0}}
