@@ -10,7 +10,6 @@
 <script>
 import DateTimePicker from "@/components/fields/input/DateTimePicker"
 import Input from "@/components/fields/input/Input"
-import moment from "moment"
 
 export default {
   components: {

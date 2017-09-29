@@ -6,17 +6,11 @@
 </template>
 
 <script>
-import "selectize"
-import "selectize/dist/css/selectize.bootstrap3.css"
-
-// import $select from "./$select"
-
 import Field from "../../Field"
 import Label from "../../Label"
 
 import destroy from "./destroy"
 import make from "./make"
-// import options from "./options"
 import setValue from "./setValue"
 
 export default {
@@ -107,6 +101,9 @@ export default {
     min-height: auto;
     padding: 4px 12px;
     border-radius: 0px;
+  }
+  .selectize-control.multi .selectize-input.has-items {
+    padding: 4px 9px 0px 4px;
   }
 }
 </style>

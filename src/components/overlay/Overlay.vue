@@ -20,8 +20,6 @@
 //   start
 //   done
 
-import $ from "jquery"
-
 export default {
   name: "of-overlay",
   props: {

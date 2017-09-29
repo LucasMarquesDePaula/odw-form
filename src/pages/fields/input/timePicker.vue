@@ -11,8 +11,6 @@
 <script>
 import TimePicker from "@/components/fields/input/TimePicker"
 
-import moment from "moment"
-
 export default {
   components: {
     [TimePicker.name]: TimePicker

@@ -6,11 +6,6 @@
 </template>
 
 <script>
-import "bootstrap-switch/dist/js/bootstrap-switch.min.js"
-import "bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css"
-
-import $ from "jquery"
-
 import Field from "../Field"
 import Label from "../Label"
 
@@ -19,14 +14,6 @@ import merge from "../utils/merge.js"
 function $switch(vm) {
   return $(vm.$el).find("input")
 }
-
-// function check(vm) {
-//   if (vm.value) {
-//     $switch(vm).attr("checked", "checked")
-//   } else {
-//     $switch(vm).removeAttr("checked")
-//   }
-// }
 
 function options(vm) {
   return merge(

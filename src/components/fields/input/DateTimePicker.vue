@@ -1,12 +1,7 @@
 <script>
-import "eonasdan-bootstrap-datetimepicker"
-import "eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
-
-import $ from "jquery"
 import Input from "./Input"
 
 import merge from "../../utils/merge.js"
-import moment from "moment"
 
 function $dateTimePicker(vm) {
   return $(vm.$el).find(".input-group")

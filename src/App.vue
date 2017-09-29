@@ -21,13 +21,11 @@
 </template>
 
 <script>
+import "bootstrap"
 import "bootstrap/dist/css/bootstrap.css"
 import "font-awesome/css/font-awesome.css"
 
 import SidebarNav from "./SidebarNav"
-
-const $ = window.$ = window.jQuery = require("jquery")
-require("bootstrap")
 
 export default {
   name: "app",

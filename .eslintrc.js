@@ -15,6 +15,10 @@ module.exports = {
   "plugins": [
     "html"
   ],
+  "globals": {
+    "$": true,
+    "moment": true
+  },
   // add your custom rules here
   "rules": {
     /**

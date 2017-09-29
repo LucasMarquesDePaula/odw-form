@@ -66,9 +66,8 @@
 </template>
 
 <script>
+import "metismenu"
 import "metismenu/dist/metisMenu.min.css"
-const $ = window.$ = window.jQuery = require("jquery")
-require("metismenu")
 
 export default {
   name: "sidebar-nav",

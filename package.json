@@ -1,6 +1,6 @@
 {
   "name": "odw-form",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Form helper using Vue.js",
   "author": "IANDev Sistemas",
   "private": true,
@@ -21,7 +21,6 @@
     "jquery": "^3.2.1",
     "metismenu": "^2.7.0",
     "moment": "^2.18.1",
-    "select2": "^4.0.3",
     "selectize": "^0.12.4",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0"
@@ -59,6 +58,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "eventsource-polyfill": "^0.9.6",
+    "expose-loader": "^0.7.3",
     "express": "^4.15.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
