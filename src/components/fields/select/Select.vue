@@ -63,7 +63,7 @@ export default {
   },
   watch: {
     options(newValue, oldValue) {
-      console.log(this.name, "watch.options")
+      // console.log(this.name, "watch.options")
       if (!this.SELF_CHANGED) {
         try {
           destroy(this)
@@ -77,7 +77,7 @@ export default {
       }
     },
     value(newValue, oldValue) {
-      console.log(this.name, "watch.value", this.SELF_CHANGED)
+      // console.log(this.name, "watch.value", this.SELF_CHANGED)
 
       if (!this.SELF_CHANGED) {
         setValue(this)

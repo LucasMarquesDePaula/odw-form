@@ -21,25 +21,36 @@ function options(vm) {
 function create(vm) {
   const $picker = $dateTimePicker(vm)
 
-  $picker.datetimepicker(options(vm))
-
   try {
     $picker.off()
       .datetimepicker("destroy")
   } finally {
-    $picker.datetimepicker(options(vm))
-      .on("dp.change", (event) => {
-        const { date } = event
-        try {
-          if (!date.isValid()) {
-            throw new Error("value is not valid")
-          }
-          vm.set(date.toDate())
-        } catch (error) {
-          vm.set()
+    const opts = options(vm)
+    const { format } = opts
+
+    $picker.datetimepicker(opts)
+      .data("DateTimePicker")
+      .date(parseMoment(vm.get(), format))
+
+    $picker.on("dp.change", (event) => {
+      const { date } = event
+      try {
+        if (!date.isValid()) {
+          throw new Error("value is not valid")
         }
-      })
+        vm.set(vm.type === String ? date.format(format) : date.toDate())
+      } catch (error) {
+        vm.set()
+      }
+    })
   }
+}
+
+function parseMoment(value, format) {
+  if (typeof value === "string") {
+    return moment(value, format)
+  }
+  return moment(value)
 }
 
 export default {
@@ -75,8 +86,9 @@ export default {
   },
   methods: {
     format() {
-      const formatted = moment(this.value)
-      return formatted && formatted.isValid() ? formatted.format(options(this).format) : ""
+      const { format } = options(this)
+      const moment = parseMoment(this.get(), format)
+      return moment && moment.isValid() ? moment.formatformat() : ""
     }
   },
   watch: {
@@ -88,9 +100,13 @@ export default {
     }
   },
   destroyed() {
-    $dateTimePicker(this)
-      .off()
-      .datetimepicker("destroy")
+    try {
+      $dateTimePicker(this)
+        .off()
+        .datetimepicker("destroy")
+    } catch (e) {
+      // Silence is golden
+    }
   },
   mounted() {
     create(this)

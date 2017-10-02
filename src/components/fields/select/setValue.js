@@ -10,7 +10,7 @@ export default (vm) => {
   const { selectize } = $select(vm).get(0)
   const { labelField, valueField } = selectize.settings
 
-  console.log(value, selectize)
+  // console.log(value, selectize)
 
   if (isArray(value)) {
     const values = []

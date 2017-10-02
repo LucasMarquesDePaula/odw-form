@@ -65,3 +65,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+input {
+  text-align: right;
+}
+</style>

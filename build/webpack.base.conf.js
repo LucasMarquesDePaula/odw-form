@@ -37,23 +37,6 @@ module.exports = {
           formatter: require("eslint-friendly-formatter")
         }
       },
-      // {
-      //   test: resolve("jquery"),
-      //   use: [{
-      //     loader: "expose-loader",
-      //     options: "jQuery"
-      //   }, {
-      //     loader: "expose-loader",
-      //     options: "$"
-      //   }]
-      // },
-      // {
-      //   test: resolve("moment"),
-      //   use: [{
-      //     loader: "expose-loader",
-      //     options: "moment"
-      //   }]
-      // },
       {
         test: /\.vue$/,
         loader: "vue-loader",
