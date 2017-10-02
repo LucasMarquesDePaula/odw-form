@@ -24,6 +24,8 @@ function create(vm) {
   try {
     $picker.off()
       .datetimepicker("destroy")
+  } catch (e) {
+    // Silence is golden
   } finally {
     const opts = options(vm)
     const { format } = opts
@@ -86,9 +88,14 @@ export default {
   },
   methods: {
     format() {
-      const { format } = options(this)
-      const moment = parseMoment(this.get(), format)
-      return moment && moment.isValid() ? moment.formatformat() : ""
+      const value = this.get()
+      if (value || value === 0) {
+        const { format } = options(this)
+        const moment = parseMoment(value, format)
+        const formatted = moment.isValid() ? moment.format(format) : ""
+        return formatted
+      }
+      return ""
     }
   },
   watch: {
@@ -97,6 +104,16 @@ export default {
         create(this)
       },
       deep: true
+    },
+    value(value) {
+      // console.log(value)
+      if (value || value === 0) {
+        const { format } = options(this)
+        $dateTimePicker(this)
+          .data("DateTimePicker")
+          .date(parseMoment(value, format).format(format))
+      }
+
     }
   },
   destroyed() {
