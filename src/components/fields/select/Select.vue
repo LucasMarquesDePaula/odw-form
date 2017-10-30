@@ -1,6 +1,6 @@
 <template>
   <div class="form-group">
-    <of-label :text="label"></of-label>
+    <of-label v-if="label" :text="label"></of-label>
     <select :multiple="isMultiple" :readonly="select.readonly || false" class="form-control input-sm" />
   </div>
 </template>
@@ -105,6 +105,9 @@ export default {
   .selectize-control.multi .selectize-input.has-items {
     padding: 4px 9px 0px 4px;
   }
+
+  &.hidden {
+    display: none;
+  }
 }
 </style>
-

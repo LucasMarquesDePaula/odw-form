@@ -1,6 +1,10 @@
 {
-    "vetur.format.js.InsertSpaceBeforeFunctionParenthesis": false,
-    "git.enableSmartCommit": true,
-    "files.eol": "\n",
-    "editor.tabSize": 2
+  "editor.formatOnSave": true,
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  // prettier
+  "javascript.format.enable": false,
+  "prettier.eslintIntegration": true,
+  "prettier.semi": false,
+  "prettier.useTabs": false
 }

@@ -21,6 +21,7 @@
     "jquery": "^3.2.1",
     "metismenu": "^2.7.0",
     "moment": "^2.18.1",
+    "prettier-eslint": "^8.2.1",
     "selectize": "^0.12.4",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0"

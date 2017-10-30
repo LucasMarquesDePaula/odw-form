@@ -30,8 +30,7 @@ export default {
       default: false
     },
     label: {
-      type: String,
-      default: ""
+      type: String
     },
     name: {
       type: String,

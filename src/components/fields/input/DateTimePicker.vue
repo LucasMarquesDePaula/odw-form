@@ -52,7 +52,7 @@ function parseMoment(value, format) {
   if (typeof value === "string") {
     return moment(value, format)
   }
-  return moment(value)
+  return (value && moment(value)) || null
 }
 
 export default {
@@ -113,7 +113,6 @@ export default {
           .data("DateTimePicker")
           .date(parseMoment(value, format).format(format))
       }
-
     }
   },
   destroyed() {

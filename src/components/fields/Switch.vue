@@ -1,7 +1,7 @@
 <template>
-  <div class="form-group">
-    <of-label :text="label" />
-    <input type="checkbox">
+  <div class="form-group" :class="{ hidden: isHidden }">
+    <of-label v-if="label" :text="label"></of-label>
+    <input type="checkbox" />
   </div>
 </template>
 
@@ -74,3 +74,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.form-group {
+  div.input-group {
+    width: 100%;
+  }
+  &.hidden {
+    display: none;
+  }
+}
+</style>
