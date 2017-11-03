@@ -28,12 +28,14 @@ export default new Router({
     {
       path: "/fields/date-picker",
       name: "Date Picker",
-      component: (resolve) => require(["@/pages/fields/input/datePicker"], resolve)
+      component: (resolve) =>
+        require(["@/pages/fields/input/datePicker"], resolve)
     },
     {
       path: "/fields/datetime-picker",
       name: "DateTime Picker",
-      component: (resolve) => require(["@/pages/fields/input/dateTimePicker"], resolve)
+      component: (resolve) =>
+        require(["@/pages/fields/input/dateTimePicker"], resolve)
     },
     {
       path: "/fields/mask",
@@ -58,7 +60,13 @@ export default new Router({
     {
       path: "/fields/time-picker",
       name: "Time Picker",
-      component: (resolve) => require(["@/pages/fields/input/timePicker"], resolve)
+      component: (resolve) =>
+        require(["@/pages/fields/input/timePicker"], resolve)
+    },
+    {
+      path: "/textarea",
+      name: "Textarea",
+      component: (resolve) => require(["@/pages/fields/textarea"], resolve)
     },
     {
       path: "/overlay",
