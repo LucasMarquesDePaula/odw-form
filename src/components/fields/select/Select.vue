@@ -102,8 +102,14 @@ export default {
     padding: 4px 12px;
     border-radius: 0px;
   }
-  .selectize-control.multi .selectize-input.has-items {
-    padding: 4px 9px 0px 4px;
+
+  .selectize-control.single,
+  .selectize-control.multi {
+    .selectize-input .item {
+      background-color: #eeeeee;
+      padding: 1px 10px;
+      border-radius: 3px;
+    }
   }
 
   &.hidden {
