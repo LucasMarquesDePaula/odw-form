@@ -107,7 +107,7 @@ export default {
   .selectize-control.multi {
     .selectize-input .item {
       background-color: #eeeeee;
-      padding: 1px 10px;
+      padding: 1px 7px;
       border-radius: 3px;
     }
   }
