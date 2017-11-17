@@ -1,5 +1,5 @@
 <template>
-  <div class="form-group">
+  <div class="form-group" :class="{ hidden: isHidden }">
     <of-label v-if="label" :text="label"></of-label>
     <select :multiple="isMultiple" :readonly="select.readonly || false" class="form-control input-sm" />
   </div>
